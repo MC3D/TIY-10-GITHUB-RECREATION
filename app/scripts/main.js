@@ -22,39 +22,32 @@ $(document).ready(function() {
       $.getJSON('//api.github.com/users/'+ username + '/orgs').done(function(orgs){
         var data = {
           avatar: user.avatar_url,
-          // avatar_url: user.html_url,
-          // username: user.login,
-          // name: user.name,
-          // memberSince: moment(user.created_at).format("MMM DD, YYYY"),
-          // followers: user.followers,
-          // following: user.following,
-          // starred: starred.length,
+          username: user.login,
+          name: user.name,
+          joined: moment(user.created_at).format("MMM DD, YYYY"),
+          followers: user.followers,
+          following: user.following,
+          starred: starred.length,
         };
 
         renderTemplate('#template-header', '.header', data);
+        renderTemplate('#template-page', '.page', data);
 
+        _.each(orgs, function(org){
+          var org = {
+            name: org.login,
+            url: org.url,
+            avatar: org.avatar_url
+          }
+          renderTemplate('#template-orgs', '.orgs', org);
+        });
       });
     });
   });
 });
 
-//   $.getJSON("//api.github.com/users/" + username).done(function(user) {
-//   $.getJSON("https://api.github.com/users/" + username + "/starred").done(function(starred) {
-//
-//
-//     // returns an object
-//     var data = {
-//       avatar: results.avatar_url,
-//       avatar_url: results.html_url,
-//       username: results.login,
-//       name: results.name,
-//       memberSince: moment(results.created_at).format("MMM DD, YYYY"),
-//       followers: results.followers,
-//       following: results.following,
-//     };
-//
-//     $.getJSON("https://api.github.com/users/" + username + "/starred").done(function(results) {
-//       data.starred = results.length,
+
+
 //
 //         $.getJSON("https://api.github.com/users/" + username + "/orgs").done(function(results) {
 //
