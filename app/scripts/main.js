@@ -1,39 +1,77 @@
-// 'use strict';
+/* globals _ */
 
-// var username = 'MC3D';
-// var baseURL = 'https://api.github.com/users/MC3D';
-// var token = window.token;
+$(document).ready(function() {
+  'use strict';
+
+  var username = 'MC3D';
+
+  // templateId (template must have ID), container (reference to html element), model (data object)
+  function renderTemplate(templateId, container, model) {
+    // convert templateId to string
+    var templateString = $(templateId).text();
+    // complies js templates into functions that can be evaluated for rendering
+    var templateFunction = _.template(templateString);
+    // pass object model to function
+    var renderedTemplate = templateFunction(model);
+    // append template to set location
+    $(container).append(renderedTemplate);
+  }
+
+  $.getJSON('//api.github.com/users/' + username).done(function(user){
+    $.getJSON('//api.github.com/users/'+ username + '/starred').done(function(starred){
+      $.getJSON('//api.github.com/users/'+ username + '/orgs').done(function(orgs){
+        var data = {
+          avatar: user.avatar_url,
+          // avatar_url: user.html_url,
+          // username: user.login,
+          // name: user.name,
+          // memberSince: moment(user.created_at).format("MMM DD, YYYY"),
+          // followers: user.followers,
+          // following: user.following,
+          // starred: starred.length,
+        };
+
+        renderTemplate('#template-header', '.header', data);
+
+      });
+    });
+  });
+});
+
+//   $.getJSON("//api.github.com/users/" + username).done(function(user) {
+//   $.getJSON("https://api.github.com/users/" + username + "/starred").done(function(starred) {
 //
-// if(typeof(token) !== 'undefined'){
-//   $.ajaxSetup({
-//     headers: {
-//       'Authorization': 'token ' + token,
-//     }
+//
+//     // returns an object
+//     var data = {
+//       avatar: results.avatar_url,
+//       avatar_url: results.html_url,
+//       username: results.login,
+//       name: results.name,
+//       memberSince: moment(results.created_at).format("MMM DD, YYYY"),
+//       followers: results.followers,
+//       following: results.following,
+//     };
+//
+//     $.getJSON("https://api.github.com/users/" + username + "/starred").done(function(results) {
+//       data.starred = results.length,
+//
+//         $.getJSON("https://api.github.com/users/" + username + "/orgs").done(function(results) {
+//
+//           _.each(results, function(result) {
+//             data.org_avatar = result.avatar_url;
+//             data.org_name = result.login;
+//           });
+//
+//           // renderTemplate('#header-user', '#header-block', userData);
+//           // renderTemplate('#sidebar-user', '#sidebar', userData);
+//         });
+//     });
 //   });
-// }
-//
-// // templateId (template must have ID), location (reference to location in html), model is an object model
-// function renderTemplate(templateId, location, model) {
-//     // convert templateId to string
-//     var templateString = $(templateId).text();
-//     // complies js templates into functions that can be evaluated for rendering
-//     var templateFunction = _.template(templateString);
-//     // pass object model to function
-//     var renderedTemplate = templateFunction(model);
-//     // append template to set location
-//     $(location).append(renderedTemplate);
-// }
-//
-// $.getJSON("https://api.github.com/users/MC3D").done(function(data) {
-//   var userData = {
-//       avatar: data.avatar_url,
-//       avatarURL: data.html_url,
-//       username: data.login,
-//       name: data.name,
-//       memberSince: moment(data.created_at).format('MMM DD, YYYY'),
-//       followers: data.followers,
-//       following: data.following,
-//   };
+// });
+
+
+
 //
 //   $.getJSON("https://api.github.com/users/MC3D/starred").done(function(data) {
 //     userData.starred = data.length,
