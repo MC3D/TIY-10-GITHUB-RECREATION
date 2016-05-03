@@ -99,17 +99,7 @@
                     <input type="text" class='form-control' placeholder='Find a repository...'><input type="submit" value='Search' class='btn'>
                   </form>
                 </div>
-                <ul class='repo-list'>
-                  <div class="repo-list-item">
-                    <div class='repo-list-stats'>
-                      <span>JavaScript</span>
-                      <a href="" class='repo-list-stat-item'><span class='octicon octicon-star'></span>0</a>
-                      <a href="" class='repo-list-stat-item'><span class="octicon octicon-git-branch"></span>0</a>
-                    </div>
-                    <h3 class='repo-list-name'><a href="#">TIY-10-GITHUB-RECREATION</a></h3>
-                    <p class='repo-list-meta'>Updated<span>17 hours ago</span></p>
-                  </div>
-                </ul>
+                <ul class='repo-list'></ul>
               </div>
               <div class="contributions-grid"></div>
               <div class="contributions-list"></div>
@@ -123,6 +113,18 @@
 
     <script type='text/template' id='template-orgs'>
       <a href="<%= url %>" class='org-item'><img src="<%= avatar %>" alt=""></a>
+    </script>
+
+    <script type='text/template' id='template-repos'>
+      <div class="repo-list-item">
+        <div class='repo-list-stats'>
+          <span><%= language %></span>
+          <a href="" class='repo-list-stat-item'><span class='octicon octicon-star'></span><%= stargazers %></a>
+          
+        </div>
+        <h3 class='repo-list-name'><a href="#"><%= name %></a></h3>
+        <p class='repo-list-meta'>Updated<span><%= pushed %></span></p>
+      </div>
     </script>
 
     <!-- build:js scripts/vendor.js -->
