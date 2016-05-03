@@ -45,16 +45,18 @@ $(document).ready(function() {
           });
 
           var repoSort = _.sortBy(repos, 'pushed_at').reverse();
-          _.each(repoSort, function(repository){
-            var repo = {
-              name: repository.name,
-              pushed: moment(repository.pushed_at).fromNow(),
-              language: repository.language,
-              stargazers: repository.stargazers_count,
-              url: repository.html_url,
-              fullname: repository.full_name
+          _.each(repoSort, function(repo){
+            var data = {
+              id: repo.id,
+              name: repo.name,
+              pushed: moment(repo.pushed_at).fromNow(),
+              language: repo.language,
+              stargazers: repo.stargazers_count,
+              forks: repo.forks,
+              url: repo.html_url,
+              fullname: repo.full_name
             }
-            renderTemplate('#template-repos', '.repo-list', repo);
+            renderTemplate('#template-repos', '.repo-list', data);
           });
         });
       });

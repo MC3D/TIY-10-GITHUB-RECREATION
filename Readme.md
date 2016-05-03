@@ -1,5 +1,12 @@
-## Readme
+9/8/2014
 
-You should probably update this file.
+The assignment is to recreate the Repositories tab on your GitHub profile.
 
-> This app was generated with the [Yeoman TIY Generator](https://github.com/twhitacre/generator-tiy-webapp)
+Notes
+
+* There is a considerable amount of data, so you may want to store it in a separate file.
+
+Extra
+
+* Recreate the Contributions tab
+* Recreate the Public activity tab
