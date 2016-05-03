@@ -446,11 +446,11 @@ h3 {
   }
 }
 
-.repo-list {
+.repo-nav-list {
   margin-top: 6px;
 }
 
-.repo-item {
+.repo-nav-item {
   font-size: 14px;
   list-style: none;
   margin-left: 12px;
@@ -486,4 +486,67 @@ h3 {
   outline: none;
   padding: 7px 8px;
   vertical-align: middle;
+}
+
+.repo-list {
+  position: relative;
+}
+
+.repo-list-item {
+  border-bottom: 1px solid #eee;
+  list-style: none;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  position: relative;
+}
+
+.repo-list-stats {
+  color: #888;
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 6px;
+
+  .repo-list-stat-item {
+    color: #888;
+    display: inline-block;
+    margin-left: 8px;
+    position: relative;
+    text-decoration: none;
+
+    .octicon {
+      font-size: 16px;
+      margin-right: 3px;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+  }
+
+  .octicon-star {
+    height: 16px;
+    width: 14px;
+  }
+
+  .octicon-git-branch {
+    height: 16px;
+    width: 10px;
+  }
+}
+
+.repo-list-name {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.repo-list-meta {
+  color: #888;
+  display: block;
+  font-size: 13px;
+  margin-top: 8px;
+  margin-bottom: 0;
+
+  span {
+    margin-left: 3.5px;
+  }
 }
