@@ -325,3 +325,165 @@ h3 {
     width: 42px;
   }
 }
+
+.column-right {
+  width: 75%;
+}
+
+.nav {
+  border-bottom: 1px solid #ddd;
+  margin: 0 auto 15px;
+}
+
+.right {
+  float: right !important;
+}
+
+.btn {
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  .octicon {
+    vertical-align: text-top;
+  }
+}
+
+.btn-sm {
+  padding: 2px 10px;
+}
+
+.octicon-pencil {
+  padding-right: 3px;
+}
+
+.tabs {
+  margin-bottom: -1px;
+}
+
+.tab {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  color: #666;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 12px;
+  text-decoration: none;
+
+  &.selected {
+    background-color: #fff;
+    border-color: #ddd;
+    border-radius: 3px 3px 0 0;
+    color: #333;
+
+  }
+
+  .octicon {
+    overflow: hidden;
+  }
+
+  .octicon-diff-added {
+    height: 16px;
+    padding-right: 18px;
+    width: 14px;
+  }
+
+  .octicon-repo {
+    height: 16px;
+    padding-right: 16px;
+    width: 12px;
+  }
+
+  .octicon-rss {
+    height: 16px;
+    padding-right: 14px;
+    width: 10px;
+  }
+}
+
+.repos {
+  position: relative !important;
+}
+
+.repos-filter-bar {
+  background-color: #fff;
+  border-bottom: 1px #e5e5e5 solid !important;
+  border-color: #ddd;
+  padding: 0 0 12px;
+  position: relative;
+
+  &:before {
+    display: table;
+    content: "";
+  }
+}
+
+.btn-primary {
+  background-color: #60b044;
+  background-image: linear-gradient(#8add6d, #60b044);
+  border-color: #5ca941;
+  color: #fff;
+  margin-left: 12.5px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+
+  .octicon-repo {
+    height: 16px;
+    padding-right: 15px;
+    width: 12px;
+  }
+}
+
+.repo-list {
+  margin-top: 6px;
+}
+
+.repo-item {
+  font-size: 14px;
+  list-style: none;
+  margin-left: 12px;
+  position: relative;
+}
+
+.repo-filter-tab {
+  &.selected {
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+.repo-search-form {
+  display: inline;
+
+  .form-control {
+    margin-right: 4px;
+    width: 260px;
+  }
+}
+
+.form-control {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 1px solid #ddd;
+  color: #333;
+  font-size: 13px;
+  min-height: 34px;
+  outline: none;
+  padding: 7px 8px;
+  vertical-align: middle;
+}
