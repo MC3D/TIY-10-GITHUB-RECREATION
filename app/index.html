@@ -28,6 +28,27 @@
     <div class="wrapper">
       <div class="header"></div>
       <div class="page"></div>
+      <div class='footer-container container'>
+        <div class="footer">
+          <ul class="footer-links right">
+            <li><a href="">Status</a></li>
+            <li><a href="">API</a></li>
+            <li><a href="">Training</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+          <a href="" class="footer-mark"><span class='octicon octicon-mark-github'></span></a>
+          <ul class="footer-links">
+            <li>© 2016 GitHub, Inc.</li>
+            <li><a href="">Terms</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Security</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Help</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script type='text/template' id='template-header'>
@@ -120,7 +141,7 @@
         <div class='repo-list-stats'>
           <span><%= language %></span>
           <a href="" class='repo-list-stat-item'><span class='octicon octicon-star'></span><%= stargazers %></a>
-          
+          <a href="" class='repo-list-stat-item'><span class="octicon octicon-git-branch"></span>0</a>
         </div>
         <h3 class='repo-list-name'><a href="#"><%= name %></a></h3>
         <p class='repo-list-meta'>Updated<span><%= pushed %></span></p>

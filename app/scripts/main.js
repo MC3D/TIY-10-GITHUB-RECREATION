@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   // templateId (template must have ID), container (reference to html element), model (data object)
   function renderTemplate(templateId, container, model) {
-    // convert templateId to string
+    // convert script to string
     var templateString = $(templateId).text();
     // complies js templates into functions that can be evaluated for rendering
     var templateFunction = _.template(templateString);
