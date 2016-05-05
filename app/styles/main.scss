@@ -24,13 +24,19 @@ a {
   background-color: transparent;
   color: #4078c0;
   text-decoration: none;
+
+  &:active {
+    outline-width: 0;
+    text-decoration: underline;
+
+  }
 }
 
 input {
   overflow: visible;
 
   &:focus {
-    border-color: #4078c0;
+    border-color: #51a7e8;
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.075),0 0 5px rgba(81,167,232,0.5);
   }
 }
@@ -145,6 +151,13 @@ h3 {
 
 .header-nav-item {
   float: left;
+
+  .dropdown-menu{
+    margin-top: 13px;
+    right: 0;
+    left: auto;
+    width: 180px;
+  }
 }
 
 .header-nav-link {
@@ -154,6 +167,7 @@ h3 {
   font-weight: bold;
   line-height: 20px;
   padding: 4px 8px;
+  position: relative;
 
   &:hover{
     color: #4078c0;
@@ -208,6 +222,41 @@ h3 {
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
+
+.dropdown-menu {
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+}
+
+.dropdown-header {
+  color: #767676;
+  padding: 4px 15px;
+}
+
+.dropdown-divider {
+  background-color: #e5e5e5;
+  height: 1px;
+  margin: 8px 1px;
+}
+
+.dropdown-item {
+  color: #333;
+  display: block;
+  overflow: hidden;
+  padding: 4px 10px 4px 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 
 .page-content {
   padding-top: 20px;
@@ -615,4 +664,62 @@ h3 {
   a {
     margin-left: 10px;
   }
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover::before, .tooltip:active::before, .tooltip:focus::before {
+  display: inline-block;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.tooltip::before {
+  border: 5px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.8);
+  bottom: -5px;
+  color: rgba(0,0,0,0.8);
+  content: "";
+  display: none;
+  height: 0;
+  margin-right: -5px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 50%;
+  top: auto;
+  width: 0;
+  z-index: 1000001;
+}
+
+.tooltip:hover::after, .tooltip:active::after, .tooltip:focus::after {
+  display: inline-block;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.tooltip::after {
+  background: rgba(0,0,0,0.8);
+  border-radius: 3px;
+  color: #fff;
+  content: attr(aria-label);
+  font: normal normal 11px/1.5 Helvetica, arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  letter-spacing: normal;
+  margin-top: 5px;
+  opacity: 0;
+  padding: 5px 8px;
+  pointer-events: none;
+  position: absolute;
+  right: 50%;
+  text-align: center;
+  text-shadow: none;
+  text-transform: none;
+  top: 100%;
+  transform: translateX(50%);
+  white-space: pre;
+  word-wrap: break-word;
+  z-index: 1000000;
 }
