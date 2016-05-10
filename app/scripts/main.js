@@ -56,6 +56,7 @@ $(document).ready(function() {
               stargazers: repo.stargazers_count,
               url: repo.html_url,
               fullname: repo.full_name,
+              fork: repo.fork
             }
 
             function callback() {
@@ -74,7 +75,7 @@ $(document).ready(function() {
             if (repo.fork === true){
               $.getJSON(repo.url).done(function(i){
                 data.forks = i.parent.forks;
-                data.full_name = i.parent.full_name;
+                data.parent_fullname = i.parent.full_name;
                 callback();
               });
             } else {

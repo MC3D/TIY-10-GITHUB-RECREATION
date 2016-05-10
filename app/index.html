@@ -171,7 +171,10 @@
           <a href="#" class='repo-list-stat-item'><span class="octicon octicon-git-branch"></span><span class='<%= id %>'><%= forks %></span></a>
         </div>
         <h3 class='repo-list-name'><a href="#"><%= name %></a></h3>
-        
+        <% if (fork) { %>
+          <span class="octicon octicon-git-branch"></span>forked from
+          <a><%= parent_fullname %></a>
+        <% } %>
         <p class='repo-list-meta'>Updated<span><%= pushed %></span></p>
       </div>
     </script>
