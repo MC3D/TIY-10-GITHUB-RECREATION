@@ -1,4 +1,4 @@
-/* globals _ */
+/* globals _, moment */
 
 $(document).ready(function() {
   'use strict';
@@ -44,19 +44,44 @@ $(document).ready(function() {
             renderTemplate('#template-orgs', '.orgs', org);
           });
 
-          var repoSort = _.sortBy(repos, 'pushed_at').reverse();
-          _.each(repoSort, function(repo){
+          var i= 0;
+          var reposLength = repos.length;
+          var reposArray = [];
+          _.each(repos, function(repo){
             var data = {
               id: repo.id,
               name: repo.name,
-              pushed: moment(repo.pushed_at).fromNow(),
+              pushed: repo.pushed_at,
               language: repo.language,
               stargazers: repo.stargazers_count,
-              forks: repo.forks,
               url: repo.html_url,
-              fullname: repo.full_name
+              fullname: repo.full_name,
             }
-            renderTemplate('#template-repos', '.repo-list', data);
+
+            function callback() {
+              reposArray.push(data);
+              i++;
+              if(i === reposLength) {
+                var repoSort = _.sortBy(reposArray, 'pushed').reverse();
+                _.each(repoSort, function(repo){
+                  repo.pushed = moment(repo.pushed).fromNow();
+                  renderTemplate('#template-repos', '.repo-list', repo);
+                });
+
+              }
+            }
+
+            if (repo.fork === true){
+              $.getJSON(repo.url).done(function(i){
+                data.forks = i.parent.forks;
+                data.full_name = i.parent.full_name;
+                callback();
+              });
+            } else {
+              data.forks = repo.forks;
+              callback();
+              // renderTemplate('#template-repos', '.repo-list', data);
+            }
           });
         });
       });
