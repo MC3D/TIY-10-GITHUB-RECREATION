@@ -256,8 +256,6 @@ h3 {
   white-space: nowrap;
 }
 
-
-
 .page-content {
   padding-top: 20px;
 
@@ -590,6 +588,10 @@ h3 {
       overflow: hidden;
       vertical-align: bottom;
     }
+
+    &:hover{
+      color: #4078c0;
+    }
   }
 
   .octicon-star {
@@ -725,4 +727,11 @@ h3 {
 .tooltip-l::after {
   margin-right: -15px;
   right: 175%;
+}
+
+.btn-grey:hover {
+  background-color: #ddd;
+  text-decoration: none;
+  background-image: linear-gradient(#eee,#ddd);
+  border-color: #ccc;
 }

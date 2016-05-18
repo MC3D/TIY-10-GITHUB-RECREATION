@@ -72,7 +72,7 @@ $(document).ready(function() {
                 $('#repo-search-input').keyup(function(){
                   var input = $(this).val().trim();
                   if (input.length > 0)  {
-                    var filter = $('.repo-link').filter(function(){
+                    $('.repo-link').filter(function(){
                       var string = $(this).text();
                       // The RegExp constructor creates a regular expression object for matching text with a pattern
                       // i ignore case
@@ -83,7 +83,7 @@ $(document).ready(function() {
                       } else {
                         $(this).parent().parent().show();
                       }
-                    })
+                    });
                   }
                 });
 
