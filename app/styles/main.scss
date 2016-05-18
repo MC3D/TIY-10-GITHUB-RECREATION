@@ -661,6 +661,10 @@ h3 {
   li {
     display: inline-block;
     line-height: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   a {
