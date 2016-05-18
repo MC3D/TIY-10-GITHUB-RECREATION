@@ -35,11 +35,11 @@ $(document).ready(function() {
           renderTemplate('#template-header', '.header', data);
           renderTemplate('#template-page', '.page', data);
 
-          _.each(orgs, function(org) {
+          _.each(orgs, function(item) {
             var org = {
-              name: org.login,
-              url: org.url,
-              avatar: org.avatar_url
+              name: item.login,
+              url: item.url,
+              avatar: item.avatar_url
             }
             renderTemplate('#template-orgs', '.orgs', org);
           });
@@ -57,7 +57,7 @@ $(document).ready(function() {
               url: repo.html_url,
               fullname: repo.full_name,
               fork: repo.fork
-            }
+            };
 
             function callback() {
               reposArray.push(data);
@@ -67,6 +67,24 @@ $(document).ready(function() {
                 _.each(repoSort, function(repo){
                   repo.pushed = moment(repo.pushed).fromNow();
                   renderTemplate('#template-repos', '.repo-list', repo);
+                });
+
+                $('#repo-search-input').keyup(function(){
+                  var input = $(this).val().trim();
+                  if (input.length > 0)  {
+                    var filter = $('.repo-link').filter(function(){
+                      var string = $(this).text();
+                      // The RegExp constructor creates a regular expression object for matching text with a pattern
+                      // i ignore case
+                      var re = new RegExp(input, 'i');
+                      var result = re.test(string);
+                      if(!result){
+                        $(this).parent().parent().hide();
+                      } else {
+                        $(this).parent().parent().show();
+                      }
+                    })
+                  }
                 });
 
               }
@@ -81,7 +99,6 @@ $(document).ready(function() {
             } else {
               data.forks = repo.forks;
               callback();
-              // renderTemplate('#template-repos', '.repo-list', data);
             }
           });
         });
@@ -89,5 +106,5 @@ $(document).ready(function() {
     });
   });
 
-    // $('.tooltip').tooltip();
+
 });
