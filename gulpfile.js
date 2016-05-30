@@ -1,5 +1,5 @@
 'use strict';
-// generated on 2016-05-02 using generator-tiy-webapp 0.0.11
+// generated on 2015-09-14 using generator-tiy-webapp 0.0.8
 
 // Require your modules
 var gulp = require('gulp');
@@ -38,21 +38,14 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('fonts', function () {
-  return gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'));
-});
-
 gulp.task('extras', function () {
   return gulp.src(['app/*.*', '!app/*.html'], {dot: true})
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', function (cb) {
-  return $.cache.clearAll(cb, function() {
-    return rimraf('.tmp', function () {
-      return rimraf('dist', cb);
-    });
+  rimraf('.tmp', function () {
+    rimraf('dist', cb);
   });
 });
 
@@ -108,7 +101,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['html', 'images', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
