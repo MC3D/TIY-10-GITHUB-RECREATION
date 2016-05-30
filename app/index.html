@@ -169,7 +169,7 @@
           <a href="#" class='repo-list-stat-item'><span class='octicon octicon-star'></span><%= stargazers %></a>
           <a href="#" class='repo-list-stat-item'><span class="octicon octicon-git-branch"></span><span class='<%= id %>'><%= forks %></span></a>
         </div>
-        <h3 class='repo-list-name'><a href="#" class='repo-link'><%= name %></a></h3>
+        <h3 class='repo-list-name'><a href="<%= url %>" class='repo-link'><%= name %></a></h3>
         <% if (fork) { %>
           <span class="octicon octicon-git-branch"></span>forked from
           <a><%= parent_fullname %></a>
