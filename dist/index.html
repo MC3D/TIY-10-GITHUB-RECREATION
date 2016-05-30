@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang='en' class='no-js'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='description' content=''>
+  <!-- to ensure proper rendering and touch zooming, add the viewport meta tag to your <head>. -->
+  <meta name='viewport' content='width=device-width, initial-scale=1, minimal-ui'>
+  <title>MC3D (Mady Chapman)</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.css">
+
+  <script src="scripts/vendor/modernizr.js"></script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header"></div>
+      <div class="page"></div>
+      <div class='footer-container container'>
+        <div class="footer">
+          <ul class="footer-links right">
+            <li><a href="#">Status</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Training</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <a href="#" class="footer-mark"><span class='octicon octicon-mark-github'></span></a>
+          <ul class="footer-links">
+            <li>© 2016 GitHub, Inc.</li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script type='text/template' id='template-header'>
+      <div class="container clearfix">
+        <a href="#" class="header-logo">
+          <span class='octicon octicon-mark-github'></span>
+        </a>
+        <div class='header-search'>
+          <input class='header-search-input' type="text" placeholder='Search GitHub'>
+        </div>
+        <ul class='header-nav left'>
+          <li class="header-nav-item"><a href="#" class='header-nav-link'>Pull requests</a></li>
+          <li class="header-nav-item"><a href="#" class='header-nav-link'>Issues</a></li>
+          <li class="header-nav-item"><a href="#" class='header-nav-link'>Gist</a></li>
+        </ul>
+        <ul class="header-nav user-nav right">
+          <li class="header-nav-item"><a href="#" class='header-nav-link tooltip' aria-label='Go to notifications'><span class='octicon octicon-bell'></span></a></li>
+          <li class="header-nav-item">
+            <a href="#" class='header-nav-link tooltip' aria-label='Create new...'><span class='octicon octicon-plus'></span><span class='dropdown-caret'></span></a>
+            <!-- <div class="dropdown-menu-content">
+              <ul class="dropdown-menu">
+                <a href="" class="dropdown-item">New repository</a>
+                <a href="" class="dropdown-item">Import repository</a>
+                <a href="" class="dropdown-item">New Organization</a>
+              </ul>
+            </div> -->
+          </li>
+          <li class="header-nav-item">
+            <a href="#" class='header-nav-link tooltip tooltip-l' aria-label='View profile and more'><img class='avatar' src='<%= avatar %>' alt=""><span class='dropdown-caret'></span></a>
+
+            <!-- <div class="dropdown-menu-content">
+              <div class="dropdown-menu">
+                <div class="dropdown-header">Signed in as <strong><%= name %></strong></div>
+                <div class='dropdown-divider'></div>
+                <a href="" class="dropdown-item">Your profile</a>
+                <a href="" class="dropdown-item">Your stars</a>
+                <a href="" class="dropdown-item">Explore</a>
+                <a href="" class="dropdown-item">Integrations</a>
+                <a href="" class="dropdown-item">Help</a>
+                <div class='dropdown-divider'></div>
+                <a href="" class="dropdown-item">Settings</a>
+                <a href="" class="dropdown-item">Sign Out</a>
+              </div>
+            </div> -->
+          </li>
+        </ul>
+      </div>
+    </script>
+
+    <script type='text/template' id='template-page'>
+      <div class="page-content container">
+        <div class="columns">
+          <div class="column column-left">
+            <a href="#">
+              <img class='avatar' height="" src='<%= avatar %>' alt="">
+            </a>
+            <h1 class='names'>
+              <div class='fullname'><%= name %></div>
+              <div class='username'><%= username %></div>
+            </h1>
+            <ul class='details'>
+              <li class="detail"><span class='octicon octicon-clock'></span><span class='join-label'>Joined on</span><span><%= joined %></span></li>
+            </ul>
+            <div class="stats">
+              <a href="#" class="stat"><strong class='stat-count'><%= followers %></strong><span class='text-muted'>Followers</span></a>
+              <a href="#" class="stat"><strong class='stat-count'><%= starred %></strong><span class='text-muted'>Starred</span></a>
+              <a href="#" class="stat"><strong class='stat-count'><%= following %></strong><span class='text-muted'>Following</span></a>
+            </div>
+            <div class='clearfix orgs'>
+              <h3>Organizations</h3>
+            </div>
+          </div>
+          <div class="column column-right">
+            <div class='nav'>
+              <div class="right"><a href='#' class="btn btn-sm btn-grey"><span class='octicon octicon-pencil'></span>Edit profile</a></div>
+              <div class="tabs">
+                <a href="#" class="tab"><span class='octicon octicon-diff-added'></span>Contributions</a>
+                <a href="#" class="tab selected"><span class='octicon octicon-repo'></span>Repositories</a>
+                <a href="#" class="tab"><span class='octicon octicon-rss'></span>Public activity</a>
+              </div>
+            </div>
+            <div class="repos">
+              <div class="repos-tab">
+                <div class='repos-filter-bar'>
+                  <a href="#" class="btn btn-primary right"><span class="octicon octicon-repo"></span>New</a>
+                  <ul class='repo-nav-list right'>
+                    <li class="repo-nav-item right"><a href="#" class='repo-filter-tab'>Mirrors</a></li>
+                    <li class="repo-nav-item right"><a href="#" class='repo-filter-tab'>Forks</a></li>
+                    <li class="repo-nav-item right"><a href="#" class='repo-filter-tab'>Sources</a></li>
+                    <li class="repo-nav-item right"><a href="#" class='repo-filter-tab'>Private</a></li>
+                    <li class="repo-nav-item right"><a href="#" class='repo-filter-tab'>Public</a></li>
+                    <li class="repo-nav-item right"><a href="#" class='repo-filter-tab selected'>All</a></li>
+                  </ul>
+                  <form action="" class='repo-search-form'>
+                    <input type="text" id='repo-search-input' class='form-control' placeholder='Find a repository...'><input type="submit" value='Search' class='btn btn-grey'>
+                  </form>
+                </div>
+                <ul class='repo-list'></ul>
+              </div>
+              <div class="contributions-grid"></div>
+              <div class="contributions-list"></div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type='text/template' id='template-orgs'>
+      <a href="<%= url %>" class='org-item'><img src="<%= avatar %>" alt=""></a>
+    </script>
+
+    <script type='text/template' id='template-repos'>
+      <div class="repo-list-item">
+        <div class='repo-list-stats'>
+          <span><%= language %></span>
+          <a href="#" class='repo-list-stat-item'><span class='octicon octicon-star'></span><%= stargazers %></a>
+          <a href="#" class='repo-list-stat-item'><span class="octicon octicon-git-branch"></span><span class='<%= id %>'><%= forks %></span></a>
+        </div>
+        <h3 class='repo-list-name'><a href="<%= url %>" class='repo-link'><%= name %></a></h3>
+        <% if (fork) { %>
+          <span class="octicon octicon-git-branch"></span>forked from
+          <a><%= parent_fullname %></a>
+        <% } %>
+        <p class='repo-list-meta'>Updated<span><%= pushed %></span></p>
+      </div>
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/main.js"></script>
