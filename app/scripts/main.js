@@ -38,7 +38,7 @@ $(document).ready(function() {
           _.each(orgs, function(item) {
             var org = {
               name: item.login,
-              url: item.url,
+              url: 'https://github.com/' + item.login,
               avatar: item.avatar_url
             }
             renderTemplate('#template-orgs', '.orgs', org);
