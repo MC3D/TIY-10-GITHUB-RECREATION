@@ -4,7 +4,7 @@ $(document).ready(function() {
   'use strict';
 
   var username = 'MC3D';
-  var baseURL = '//api.github.com/users/';
+  var baseURL = 'https://api.github.com/users/';
 
   // templateId (template must have ID), container (reference to html element), model (data object)
   function renderTemplate(templateId, container, model) {
@@ -105,6 +105,4 @@ $(document).ready(function() {
       });
     });
   });
-
-
 });
