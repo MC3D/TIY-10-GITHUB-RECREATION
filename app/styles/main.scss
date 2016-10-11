@@ -5,737 +5,987 @@
 // Import Bootstrap
 // @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
-* {
-  box-sizing: border-box; 	// The width and height properties include content, padding and border, but not the margin
+*
+{
+    box-sizing: border-box; 	// The width and height properties include content, padding and border, but not the margin
 }
 
-html {
-  font-family: sans-serif;
+html
+{
+    font-family: sans-serif;
 }
 
-body {
-  background-color: #fff;
-  color: #333;
-  font: 13px/1.4 Helvetica, arial, sans-serif;
-  word-wrap: break-word; // unbreakable words may be broken at arbitrary points
+body
+{
+    font: 13px/1.4 Helvetica, arial, sans-serif;
+
+    word-wrap: break-word; // unbreakable words may be broken at arbitrary points
+
+    color: #333;
+    background-color: #fff;
 }
 
-a {
-  background-color: transparent;
-  color: #4078c0;
-  text-decoration: none;
+a
+{
+    text-decoration: none;
 
-  &:active {
-    outline-width: 0;
-    text-decoration: underline;
-
-  }
-}
-
-input {
-  overflow: visible;
-
-  &:focus {
-    border-color: #51a7e8;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075),0 0 5px rgba(81,167,232,0.5);
-  }
-}
-
-ul {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-left: 0;
-}
-
-li {
-  display: list-item;
-}
-
-img {
-  border-style: none;
-}
-
-h1 {
-  font-size: 30px;
-  margin: 0.67em 0;
-}
-
-h3 {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.header {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 10px 0;
-}
-
-.container {
-  margin: 0 auto;
-  width: 980px;
-}
-
-.container::before { // ::before pseudo-element can be used to insert some content before the content of an element
-  content: "";
-  display: table;
-}
-
-.container::after {
-  content: "";
-  display: table;
-}
-
-.clearfix::before { // clearfix is a way for an element to automatically clear its child elements
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.header-logo {
-  color: #333;
-  float: left;
-  margin: auto 10px auto -2px;
-  white-space: nowrap; // collapses whitespace as for normal, but suppresses line breaks (text wrapping) within text.
-
-  .octicon-mark-github {
-    float: left;
-    font-size: 28px;
-  }
-}
-
-.octicon {
-  display: inline-block;
-  fill: currentColor; // pass color through to SVG shapes
-  vertical-align: text-top;
-
-  &:hover{
     color: #4078c0;
-  }
+    background-color: transparent;
+
+    &:active
+    {
+        text-decoration: underline;
+
+        outline-width: 0;
+    }
 }
 
-.header-search {
-  float: left;
-  margin-right: 10px;
-  width: 360px;
+input
+{
+    overflow: visible;
+
+    &:focus
+    {
+        border-color: #51a7e8;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.075),0 0 5px rgba(81,167,232,.5);
+    }
 }
 
-.header-search-input {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  box-shadow: none;
-  color: #333;
-  display: table-cell;
-  font-size: 13px;
-  min-height: 28px;
-  outline: none;
-  padding: 0 8px;
-  vertical-align: middle;
-  width: 100%;
+ul
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
 }
 
-.header-nav {
-  list-style: none;
+li
+{
+    display: list-item;
 }
 
-.left {
-  float: left !important;
+img
+{
+    border-style: none;
 }
 
-.header-nav-item {
-  float: left;
+h1
+{
+    font-size: 30px;
 
-  .dropdown-menu{
-    margin-top: 13px;
-    right: 0;
-    left: auto;
-    width: 180px;
-  }
+    margin: .67em 0;
 }
 
-.header-nav-link {
-  color: #333;
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 20px;
-  padding: 4px 8px;
-  position: relative;
-
-  &:hover{
-    color: #4078c0;
-  }
+h3
+{
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-.user-nav {
-  margin-right: -8px;
+.header
+{
+    padding: 10px 0;
 
-  .header-nav-link{
-    height: 28px;
-  }
-
-  .avatar {
-    float: left;
-    height: 20px;
-    margin-right: 5px;
-    width: 20px;
-  }
-
-  .octicon {
-    margin-top: -1px;
-    text-align: center;
-    width: 16px;
-  }
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
 }
 
-.avatar {
-  border-radius: 3px;
-  display: inline-block;
-  line-height: 1;
-  overflow: hidden;
-  vertical-align: middle;
+.container
+{
+    width: 980px;
+    margin: 0 auto;
 }
 
-.right {
-  float: right !important;
-}
-
-.octicon-plus {
-  margin-right: 1px;
-}
-
-.dropdown-caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  vertical-align: -2px;
-  content: "";
-  border: 4px solid;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-}
-
-.dropdown-menu {
-  background-clip: padding-box;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-  padding-bottom: 5px;
-  padding-top: 5px;
-  position: absolute;
-  top: 100%;
-  z-index: 100;
-}
-
-.dropdown-header {
-  color: #767676;
-  padding: 4px 15px;
-}
-
-.dropdown-divider {
-  background-color: #e5e5e5;
-  height: 1px;
-  margin: 8px 1px;
-}
-
-.dropdown-item {
-  color: #333;
-  display: block;
-  overflow: hidden;
-  padding: 4px 10px 4px 15px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.page-content {
-  padding-top: 20px;
-
-  &::before {
+.container::before
+{
     display: table;
-    content: "";
-  }
+    // ::before pseudo-element can be used to insert some content before the content of an element
 
-  &::after {
+    content: '';
+}
+
+.container::after
+{
+    display: table;
+
+    content: '';
+}
+
+.clearfix::before
+{
+    display: table;
+    // clearfix is a way for an element to automatically clear its child elements
     clear: both;
+
+    content: '';
+}
+
+.clearfix::after
+{
     display: table;
-    content: "";
-  }
+    clear: both;
+
+    content: '';
 }
 
-.columns {
-  margin-left: -10px;
-  margin-right: -10px;
-
-  &::before {
-    display: table;
-    content: "";
-  }
-
-  &::after {
-    display: table;
-    content: "";
-  }
-}
-
-.column {
-  padding-left: 10px;
-  padding-right: 10px;
-  float: left;
-
-  .avatar{
-    border-radius: 6px;
-    height: 230px;
-    width: 230px;
-  }
-}
-
-.column-left {
-  width: 25%;
-}
-
-.names {
-  line-height: 1;
-  margin: 12px auto;
-}
-
-.fullname {
-  font-size: 26px;
-  line-height: 30px;
-}
-
-.username {
-  color: #666;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 24px;
-}
-
-.details {
-  border-top: 1px #e5e5e5 solid;
-  list-style: none;
-  padding-bottom: 15px;
-  padding-top: 15px;
-}
-
-.detail {
-  display: inline-block;
-  font-size: 14px;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 3px auto 3px 24px;
-  text-overflow: ellipsis;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 100%;
-
-  .octicon {
-    color: #999;
+.header-logo
+{
     float: left;
-    margin-right: 8px;
-    text-align: center;
-    width: 16px;
-  }
+
+    margin: auto 10px auto -2px;
+
+    white-space: nowrap; // collapses whitespace as for normal, but suppresses line breaks (text wrapping) within text.
+
+    color: #333;
+
+    .octicon-mark-github
+    {
+        font-size: 28px;
+
+        float: left;
+    }
 }
 
-.join-label {
+.octicon
+{
+    display: inline-block;
+
+    vertical-align: text-top;
+
+    fill: currentColor; // pass color through to SVG shapes
+
+    &:hover
+    {
+        color: #4078c0;
+    }
+}
+
+.header-search
+{
+    float: left;
+
+    width: 360px;
+    margin-right: 10px;
+}
+
+.header-search-input
+{
+    font-size: 13px;
+
+    display: table-cell;
+
+    width: 100%;
+    min-height: 28px;
+    padding: 0 8px;
+
+    vertical-align: middle;
+
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    background: #fff;
+    box-shadow: none;
+}
+
+.header-nav
+{
+    list-style: none;
+}
+
+.left
+{
+    float: left !important;
+}
+
+.header-nav-item
+{
+    float: left;
+
+    .dropdown-menu
+    {
+        right: 0;
+        left: auto;
+
+        width: 180px;
+        margin-top: 13px;
+    }
+}
+
+.header-nav-link
+{
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+
+    position: relative;
+
+    display: block;
+
+    padding: 4px 8px;
+
+    color: #333;
+
+    &:hover
+    {
+        color: #4078c0;
+    }
+}
+
+.user-nav
+{
+    margin-right: -8px;
+
+    .header-nav-link
+    {
+        height: 28px;
+    }
+
+    .avatar
+    {
+        float: left;
+
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .octicon
+    {
+        width: 16px;
+        margin-top: -1px;
+
+        text-align: center;
+    }
+}
+
+.avatar
+{
+    line-height: 1;
+
+    display: inline-block;
+    overflow: hidden;
+
+    vertical-align: middle;
+
+    border-radius: 3px;
+}
+
+.right
+{
+    float: right !important;
+}
+
+.octicon-plus
+{
+    margin-right: 1px;
+}
+
+.dropdown-caret
+{
+    display: inline-block;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+    vertical-align: -2px;
+
+    border: 4px solid;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+.dropdown-menu
+{
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+
+.dropdown-header
+{
+    padding: 4px 15px;
+
+    color: #767676;
+}
+
+.dropdown-divider
+{
+    height: 1px;
+    margin: 8px 1px;
+
+    background-color: #e5e5e5;
+}
+
+.dropdown-item
+{
+    display: block;
+    overflow: hidden;
+
+    padding: 4px 10px 4px 15px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #333;
+}
+
+.page-content
+{
+    padding-top: 20px;
+
+    &::before
+    {
+        display: table;
+
+        content: '';
+    }
+
+    &::after
+    {
+        display: table;
+        clear: both;
+
+        content: '';
+    }
+}
+
+.columns
+{
+    margin-right: -10px;
+    margin-left: -10px;
+
+    &::before
+    {
+        display: table;
+
+        content: '';
+    }
+
+    &::after
+    {
+        display: table;
+
+        content: '';
+    }
+}
+
+.column
+{
+    float: left;
+
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .avatar
+    {
+        width: 230px;
+        height: 230px;
+
+        border-radius: 6px;
+    }
+}
+
+.column-left
+{
+    width: 25%;
+}
+
+.names
+{
+    line-height: 1;
+
+    margin: 12px auto;
+}
+
+.fullname
+{
+    font-size: 26px;
+    line-height: 30px;
+}
+
+.username
+{
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 24px;
+
+    color: #666;
+}
+
+.details
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    list-style: none;
+
+    border-top: 1px #e5e5e5 solid;
+}
+
+.detail
+{
+    font-size: 14px;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 100%;
+    padding: 3px auto 3px 24px;
+
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    .octicon
+    {
+        float: left;
+
+        width: 16px;
+        margin-right: 8px;
+
+        text-align: center;
+
+        color: #999;
+    }
+}
+
+.join-label
+{
+    margin-right: 4px;
+}
+
+.stats
+{
+    margin-bottom: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    text-align: center;
+
+    border-top: 1px #e5e5e5 solid;
+    border-bottom: 1px #e5e5e5 solid;
+    &::after
+    {
+        display: table;
+        clear: both;
+
+        content: '';
+    }
+}
+
+.stat
+{
+    font-size: 11px;
+
+    float: left;
+
+    width: 33.33%;
+
+    text-transform: capitalize;
+}
+
+.stat-count
+{
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+
+    display: block;
+}
+
+.text-muted
+{
+    color: #767676;
+}
+
+.org-item
+{
+    display: inline-block;
+
+    margin-bottom: 3px;
+
+    img
+    {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 3px;
+    }
+}
+
+.column-right
+{
+    width: 75%;
+}
+
+.nav
+{
+    margin: 0 auto 15px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.right
+{
+    float: right !important;
+}
+
+.btn
+{
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+
+    position: relative;
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    cursor: pointer;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #333;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+
+    .octicon
+    {
+        vertical-align: text-top;
+    }
+}
+
+.btn-sm
+{
+    padding: 2px 10px;
+}
+
+.octicon-pencil
+{
+    padding-right: 3px;
+}
+
+.tabs
+{
+    margin-bottom: -1px;
+}
+
+.tab
+{
+    font-size: 14px;
+    line-height: 20px;
+
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    text-decoration: none;
+
+    color: #666;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    background-color: transparent;
+
+    &.selected
+    {
+        color: #333;
+        border-color: #ddd;
+        border-radius: 3px 3px 0 0;
+        background-color: #fff;
+    }
+
+    .octicon
+    {
+        overflow: hidden;
+    }
+
+    .octicon-diff-added
+    {
+        width: 14px;
+        height: 16px;
+        padding-right: 18px;
+    }
+
+    .octicon-repo
+    {
+        width: 12px;
+        height: 16px;
+        padding-right: 16px;
+    }
+
+    .octicon-rss
+    {
+        width: 10px;
+        height: 16px;
+        padding-right: 14px;
+    }
+}
+
+.repos
+{
+    position: relative !important;
+}
+
+.repos-filter-bar
+{
+    position: relative;
+
+    padding: 0 0 12px;
+
+    border-color: #ddd;
+    border-bottom: 1px #e5e5e5 solid !important;
+    background-color: #fff;
+
+    &:before
+    {
+        display: table;
+
+        content: '';
+    }
+}
+
+.btn-primary
+{
+    margin-left: 12.5px;
+
+    color: #fff;
+    border-color: #5ca941;
+    background-color: #60b044;
+    background-image: linear-gradient(#8add6d, #60b044);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+
+    .octicon-repo
+    {
+        width: 12px;
+        height: 16px;
+        padding-right: 15px;
+    }
+}
+
+.repo-nav-list
+{
+    margin-top: 6px;
+}
+
+.repo-nav-item
+{
+    font-size: 14px;
+
+    position: relative;
+
+    margin-left: 12px;
+
+    list-style: none;
+}
+
+.repo-filter-tab
+{
+    &.selected
+    {
+        font-weight: bold;
+
+        color: #000;
+    }
+}
+
+.repo-search-form
+{
+    display: inline;
+
+    .form-control
+    {
+        width: 260px;
+        margin-right: 4px;
+    }
+}
+
+.form-control
+{
+    font-size: 13px;
+
+    min-height: 34px;
+    padding: 7px 8px;
+
+    vertical-align: middle;
+
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    box-shadow: 1px solid #ddd;
+}
+
+.repo-list
+{
+    position: relative;
+}
+
+.repo-list-item
+{
+    position: relative;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    list-style: none;
+
+    color: #888;
+    border-bottom: 1px solid #eee;
+}
+
+.repo-list-item .octicon-git-branch {
   margin-right: 4px;
 }
 
-.stats {
-  border-bottom: 1px #e5e5e5 solid;
-  border-top: 1px #e5e5e5 solid;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  padding-top: 12px;
-  text-align: center;
-  &::after {
-    display: table;
-    clear: both;
-    content: "";
-  }
-}
-
-.stat {
-  float: left;
-  font-size: 11px;
-  text-transform: capitalize;
-  width: 33.33%;
-}
-
-.stat-count {
-  display: block;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.text-muted {
-  color: #767676;
-}
-
-.org-item {
-  display: inline-block;
-  margin-bottom: 3px;
-
-  img {
-    border-radius: 3px;
-    height: 42px;
-    width: 42px;
-  }
-}
-
-.column-right {
-  width: 75%;
-}
-
-.nav {
-  border-bottom: 1px solid #ddd;
-  margin: 0 auto 15px;
-}
-
-.right {
-  float: right !important;
-}
-
-.btn {
-  background-color: #eee;
-  background-image: linear-gradient(#fcfcfc, #eee);
-  border: 1px solid #d5d5d5;
-  border-radius: 3px;
-  color: #333;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 20px;
-  padding: 6px 12px;
-  position: relative;
-  vertical-align: middle;
-  white-space: nowrap;
-
-  .octicon {
-    vertical-align: text-top;
-  }
-}
-
-.btn-sm {
-  padding: 2px 10px;
-}
-
-.octicon-pencil {
-  padding-right: 3px;
-}
-
-.tabs {
-  margin-bottom: -1px;
-}
-
-.tab {
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-bottom: 0;
-  color: #666;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 20px;
-  padding: 8px 12px;
-  text-decoration: none;
-
-  &.selected {
-    background-color: #fff;
-    border-color: #ddd;
-    border-radius: 3px 3px 0 0;
-    color: #333;
-
-  }
-
-  .octicon {
-    overflow: hidden;
-  }
-
-  .octicon-diff-added {
-    height: 16px;
-    padding-right: 18px;
-    width: 14px;
-  }
-
-  .octicon-repo {
-    height: 16px;
-    padding-right: 16px;
-    width: 12px;
-  }
-
-  .octicon-rss {
-    height: 16px;
-    padding-right: 14px;
-    width: 10px;
-  }
-}
-
-.repos {
-  position: relative !important;
-}
-
-.repos-filter-bar {
-  background-color: #fff;
-  border-bottom: 1px #e5e5e5 solid !important;
-  border-color: #ddd;
-  padding: 0 0 12px;
-  position: relative;
-
-  &:before {
-    display: table;
-    content: "";
-  }
-}
-
-.btn-primary {
-  background-color: #60b044;
-  background-image: linear-gradient(#8add6d, #60b044);
-  border-color: #5ca941;
-  color: #fff;
-  margin-left: 12.5px;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
-
-  .octicon-repo {
-    height: 16px;
-    padding-right: 15px;
-    width: 12px;
-  }
-}
-
-.repo-nav-list {
-  margin-top: 6px;
-}
-
-.repo-nav-item {
-  font-size: 14px;
-  list-style: none;
-  margin-left: 12px;
-  position: relative;
-}
-
-.repo-filter-tab {
-  &.selected {
-    color: #000;
+.repo-list-stats
+{
+    font-size: 12px;
     font-weight: bold;
-  }
-}
 
-.repo-search-form {
-  display: inline;
+    float: right;
 
-  .form-control {
-    margin-right: 4px;
-    width: 260px;
-  }
-}
+    margin-top: 6px;
 
-.form-control {
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  box-shadow: 1px solid #ddd;
-  color: #333;
-  font-size: 13px;
-  min-height: 34px;
-  outline: none;
-  padding: 7px 8px;
-  vertical-align: middle;
-}
-
-.repo-list {
-  position: relative;
-}
-
-.repo-list-item {
-  border-bottom: 1px solid #eee;
-  list-style: none;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  position: relative;
-}
-
-.repo-list-stats {
-  color: #888;
-  float: right;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 6px;
-
-  .repo-list-stat-item {
     color: #888;
-    display: inline-block;
-    margin-left: 8px;
+
+    .repo-list-stat-item
+    {
+        position: relative;
+
+        display: inline-block;
+
+        margin-left: 8px;
+
+        text-decoration: none;
+
+        color: #888;
+
+        .octicon
+        {
+            font-size: 16px;
+
+            overflow: hidden;
+
+            margin-right: 3px;
+
+            vertical-align: bottom;
+        }
+
+        &:hover
+        {
+            color: #4078c0;
+        }
+    }
+
+    .octicon-star
+    {
+        width: 14px;
+        height: 16px;
+    }
+
+    .octicon-git-branch
+    {
+        width: 10px;
+        height: 16px;
+    }
+}
+
+.repo-list-name
+{
+    font-size: 20px;
+    line-height: 1.2;
+
+    margin: 0 0 8px;
+}
+
+.repo-list-meta
+{
+    font-size: 13px;
+
+    display: block;
+
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    color: #888;
+
+    span
+    {
+        margin-left: 3.5px;
+    }
+}
+
+.footer
+{
+    font-size: 12px;
+    line-height: 1.5;
+
     position: relative;
+
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    color: #767676;
+    border-top: 1px solid #eee;
+
+    &::before
+    {
+        display: table;
+
+        content: '';
+    }
+
+    &::after
+    {
+        display: table;
+        clear: both;
+
+        content: '';
+    }
+
+    .octicon-mark-github
+    {
+        font-size: 24px;
+
+        position: absolute;
+        top: 38px;
+        left: 50%;
+
+        margin-left: -12px;
+
+        color: #ccc;
+    }
+}
+
+.footer-links
+{
+    margin: 0;
+
+    list-style: none;
+
+    li
+    {
+        line-height: 16px;
+
+        display: inline-block;
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+
+    a
+    {
+        margin-left: 10px;
+    }
+}
+
+.tooltip
+{
+    position: relative;
+}
+
+.tooltip:hover::before
+{
+    display: inline-block;
+
+    text-decoration: none;
+}
+
+.tooltip::before
+{
+    position: absolute;
+    z-index: 1000001;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+
+    display: none;
+
+    width: 0;
+    height: 0;
+    margin-right: -5px;
+
+    content: '';
+    pointer-events: none;
+
+    color: rgba(0,0,0,.8);
+    border: 5px solid transparent;
+    border-bottom-color: rgba(0,0,0,.8);
+}
+
+.tooltip:hover::after
+{
+    display: inline-block;
+
     text-decoration: none;
 
-    .octicon {
-      font-size: 16px;
-      margin-right: 3px;
-      overflow: hidden;
-      vertical-align: bottom;
-    }
-
-    &:hover{
-      color: #4078c0;
-    }
-  }
-
-  .octicon-star {
-    height: 16px;
-    width: 14px;
-  }
-
-  .octicon-git-branch {
-    height: 16px;
-    width: 10px;
-  }
+    opacity: 1;
 }
 
-.repo-list-name {
-  font-size: 20px;
-  line-height: 1.2;
-  margin: 0 0 8px;
-}
+.tooltip::after
+{
+    font: normal normal 11px/1.5 Helvetica, arial, sans-serif;
 
-.repo-list-meta {
-  color: #888;
-  display: block;
-  font-size: 13px;
-  margin-top: 8px;
-  margin-bottom: 0;
-
-  span {
-    margin-left: 3.5px;
-  }
-}
-
-.footer {
-  border-top: 1px solid #eee;
-  color: #767676;
-  font-size: 12px;
-  line-height: 1.5;
-  margin-top: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  position: relative;
-
-  &::before {
-    content: "";
-    display: table;
-  }
-
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-
-  .octicon-mark-github {
-    color: #ccc;
-    font-size: 24px;
-    left: 50%;
-    margin-left: -12px;
     position: absolute;
-    top: 38px;
-  }
+    z-index: 1000000;
+    top: 100%;
+    right: 50%;
+
+    margin-top: 5px;
+    padding: 5px 8px;
+
+    content: attr(aria-label);
+    transform: translateX(50%);
+    text-align: center;
+    white-space: pre;
+    letter-spacing: normal;
+    text-transform: none;
+    word-wrap: break-word;
+    pointer-events: none;
+
+    opacity: 0;
+    color: #fff;
+    border-radius: 3px;
+    background: rgba(0,0,0,.8);
+    text-shadow: none;
+
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.footer-links {
-  list-style: none;
-  margin:0;
+.tooltip-l::after
+{
+    right: 175%;
 
-  li {
-    display: inline-block;
-    line-height: 16px;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  a {
-    margin-left: 10px;
-  }
+    margin-right: -15px;
 }
 
-.tooltip {
-  position: relative;
-}
+.btn-grey:hover
+{
+    text-decoration: none;
 
-.tooltip:hover::before {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.tooltip::before {
-  border: 5px solid transparent;
-  border-bottom-color: rgba(0,0,0,0.8);
-  bottom: -5px;
-  color: rgba(0,0,0,0.8);
-  content: "";
-  display: none;
-  height: 0;
-  margin-right: -5px;
-  pointer-events: none;
-  position: absolute;
-  right: 50%;
-  top: auto;
-  width: 0;
-  z-index: 1000001;
-}
-
-.tooltip:hover::after {
-  display: inline-block;
-  opacity: 1;
-  text-decoration: none;
-}
-
-.tooltip::after {
-  background: rgba(0,0,0,0.8);
-  border-radius: 3px;
-  color: #fff;
-  content: attr(aria-label);
-  font: normal normal 11px/1.5 Helvetica, arial, sans-serif;
-  -webkit-font-smoothing: subpixel-antialiased;
-  letter-spacing: normal;
-  margin-top: 5px;
-  opacity: 0;
-  padding: 5px 8px;
-  pointer-events: none;
-  position: absolute;
-  right: 50%;
-  text-align: center;
-  text-shadow: none;
-  text-transform: none;
-  top: 100%;
-  transform: translateX(50%);
-  white-space: pre;
-  word-wrap: break-word;
-  z-index: 1000000;
-}
-
-.tooltip-l::after {
-  margin-right: -15px;
-  right: 175%;
-}
-
-.btn-grey:hover {
-  background-color: #ddd;
-  text-decoration: none;
-  background-image: linear-gradient(#eee,#ddd);
-  border-color: #ccc;
+    border-color: #ccc;
+    background-color: #ddd;
+    background-image: linear-gradient(#eee,#ddd);
 }
