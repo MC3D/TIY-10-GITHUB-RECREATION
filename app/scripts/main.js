@@ -72,24 +72,6 @@ $(document).ready(function() {
             repo.pushed = moment(repo.pushed).fromNow();
             renderTemplate('#template-repos', '.repo-list', repo);
           });
-
-          $('#repo-search-input').keyup(function() {
-            var input = $(this).val().trim();
-            if (input.length > 0) {
-              $('.repo-link').filter(function() {
-                var string = $(this).text();
-                // The RegExp constructor creates a regular expression object for matching text with a pattern
-                // i ignore case
-                var re = new RegExp(input, 'i');
-                var result = re.test(string);
-                if (!result) {
-                  $(this).parent().parent().hide();
-                } else {
-                  $(this).parent().parent().show();
-                }
-              });
-            }
-          });
         }
       }
 
@@ -103,6 +85,24 @@ $(document).ready(function() {
         data.forks = repo.forks;
         callback();
       }
+
+      $('#repo-search-input').keyup(function() {
+        var input = $(this).val().trim();
+        if (input.length > 0) {
+          $('.repo-link').filter(function() {
+            var string = $(this).text();
+            // The RegExp constructor creates a regular expression object for matching text with a pattern
+            // i ignore case
+            var re = new RegExp(input, 'i');
+            var result = re.test(string);
+            if (!result) {
+              $(this).parent().parent().hide();
+            } else {
+              $(this).parent().parent().show();
+            }
+          });
+        }
+      });
     });
   }
 });
