@@ -1,7 +1,7 @@
 /* globals _, moment */
 
 $(document).ready(function() {
-  'use strict';
+//   'use strict';
 
   var username = 'MC3D';
   var baseURL = 'https://api.github.com/users/';
